@@ -2,14 +2,14 @@
   "name": "reactplayground",
   "version": "1.0.0",
   "description": "React.js Playground",
-  "main": "index.js",
+  "main": "webpack.config.js",
   "scripts": {
     "build": "webpack",
     "watch": "webpack --watch"
   },
   "repository": {
     "type": "git",
-    "url": "git"
+    "url": "https://github.com/pedroresende/reactreduxrouter"
   },
   "author": "Pedro Resende <pedroresende@mail.resende.biz>",
   "license": "ISC",
