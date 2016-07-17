@@ -1,32 +1,44 @@
-global.jQuery = require('jquery');
+global.jQuery = window.jQuery = window.$ = require('jquery');
 require('bootstrap');
-import 'bootstrap/dist/css/bootstrap.css';
+require('bootstrap/dist/css/bootstrap.min.css');
+require('./assets/js/app.min.js');
 require('./assets/less/main.less');
 require('./assets/css/main.css');
-
 
 import React from 'react';
 import {render} from 'react-dom';
 import { Router, Route, IndexRoute, Link, hashHistory  } from 'react-router';
-import Menu from './components/menu.jsx';
+
+import Header from './components/header.jsx';
+import Aside from './components/aside.jsx';
+import AsideRight from './components/aside-right.jsx';
+import Content from './components/content.jsx';
+import Footer from './components/footer.jsx';
 
 const App = ({ children }) => (
-    <div>
-        <Menu />
+    <div className="wrapper">
+        <Header />
+        <Aside />
         {children}
+        <Footer />
+        <AsideRight />
+    <div className="control-sidebar-bg"></div>
     </div>
 );
 
 const Home = () => (
-    <div>
-        <h1>Home</h1>
-    </div>
+    <Content content="homepage"/>
 );
 
 const About = () => (
-    <div>
-        <h1>About</h1>
-    </div>
+        <div className="wrapper">
+            <Header />
+            <Aside />
+            <Content content="homepage"/>
+            <Footer />
+            <AsideRight />
+        <div className="control-sidebar-bg"></div>
+        </div>
 );
 
 const Contact = () => (
